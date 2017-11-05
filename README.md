@@ -14,7 +14,12 @@ You need `docker` and `docker-compose` to run this project.
 
 - Update your system `/etc/hosts` file and add `symfony.dev` (see the [docker-symfony](https://github.com/maxpou/docker-symfony) `README.md` file for more information).
 
-- Inside the `docker` folder create an `.env` file based on `.env.dist`, build images with `docker-compose build` and run containers with `docker-compose up -d`.
+- Inside the `docker` folder create an `.env` file based on `.env.dist`, build images with `$ docker-compose build` and run containers with `$ docker-compose up -d`.
+
+- Go into PHP container: `$ docker-compose exec php bash` and then:
+  - create database: `$ php bin/console doctrine:database:create`
+  - and model scheme: `$ php bin/console doctrine:schema:update --force`
+  - and fill with some fixtures `$ php bin/console doctrine:fixtures:load`.
 
 ## Notes
 

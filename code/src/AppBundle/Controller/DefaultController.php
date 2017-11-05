@@ -5,17 +5,20 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Psr\Log\LoggerInterface;
+use AppBundle\Repository\ProductRepositoryInterface;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/users", name="users")
      */
-    public function indexAction(Request $request)
+    public function usersAction(Request $request, LoggerInterface $logger, ProductRepositoryInterface $productRepo)
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $logger->info('Look! I just used a service');
+
+        $products = $productRepo->findAll();
+        var_dump($products);
+        return $this->json($products);
     }
 }
