@@ -5,20 +5,25 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Psr\Log\LoggerInterface;
-use AppBundle\Repository\ProductRepositoryInterface;
+use AppBundle\Service\FindProductsService;
 
 class DefaultController extends Controller
 {
     /**
      * @Route("/users", name="users")
      */
-    public function usersAction(Request $request, LoggerInterface $logger, ProductRepositoryInterface $productRepo)
+    public function usersAction(Request $request, FindProductsService $findProducts)
     {
-        $logger->info('Look! I just used a service');
+        $products = $findProducts->findAllProducts();
 
-        $products = $productRepo->findAll();
-        var_dump($products);
         return $this->json($products);
+    }
+
+    /**
+     * @Route("/hystrix/status", name="hystrix_status")
+     */
+    public function hystrixStatusAction(Request $request)
+    {
+
     }
 }

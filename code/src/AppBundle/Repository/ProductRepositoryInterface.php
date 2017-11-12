@@ -4,5 +4,5 @@ namespace AppBundle\Repository;
 
 interface ProductRepositoryInterface
 {
-    public function findAll();
+    public function findAll($limit);
 }

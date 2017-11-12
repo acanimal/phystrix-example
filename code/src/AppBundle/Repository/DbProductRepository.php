@@ -5,7 +5,7 @@ namespace AppBundle\Repository;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\Product;
 
-class ProductRepository implements ProductRepositoryInterface
+class DbProductRepository implements ProductRepositoryInterface
 {
     private $em;
     
@@ -14,7 +14,7 @@ class ProductRepository implements ProductRepositoryInterface
         $this->em = $em;
     }
 
-    public function findAll()
+    public function findAll($limit)
     {
         return $this->em->getRepository(Product::class)->findAll();
     }
