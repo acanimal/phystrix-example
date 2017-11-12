@@ -2,7 +2,7 @@
 FROM php:7.1-fpm
 ARG TIMEZONE
 
-MAINTAINER Maxence POUTORD <maxence.poutord@gmail.com>
+MAINTAINER Antonio Santiago <asantiagop@gmail.com>
 
 RUN apt-get update && apt-get install -y \
     openssl \
@@ -21,6 +21,10 @@ RUN "date"
 # Type docker-php-ext-install to see available extensions
 RUN docker-php-ext-install pdo pdo_mysql
 
+# APCu and APCu backward compatibility
+RUN pecl install apcu apcu_bc-beta && docker-php-ext-enable apcu
+# NOTE: apcu_bc must be enabled after apcu.
+RUN echo "extension=apc.so" >> /usr/local/etc/php/conf.d/docker-php-ext-z_apc.ini
 
 # install xdebug
 RUN pecl install xdebug
