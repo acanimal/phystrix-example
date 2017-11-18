@@ -21,8 +21,12 @@ You need `docker` and `docker-compose` to run this project.
   - and model scheme: `$ php bin/console doctrine:schema:update --force`
   - and fill with some fixtures `$ php bin/console doctrine:fixtures:load`.
 
+## Running the examples
+
+
+
+----
+
 ## Notes
 
-The `docker` folder contains the configuration needed to build the required containers for this project, mainly php-fpm, mysql and hystrix-dasboard. See `docker/README.md` file.
-
-It is based on the project [docker-symfony](https://github.com/maxpou/docker-symfony) and [hystrix-dashboard](https://hub.docker.com/r/kennedyoliveira/hystrix-dashboard/).
+The `docker` folder contains the configuration needed to build the required containers for this project, mainly php-fpm, mysql and hystrix-dasboard. It is based on the project [docker-symfony](https://github.com/maxpou/docker-symfony) and [hystrix-dashboard](https://hub.docker.com/r/kennedyoliveira/hystrix-dashboard/).

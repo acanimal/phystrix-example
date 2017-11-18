@@ -10,6 +10,7 @@ class FindAllCommand extends AbstractCommand
     const COMMAND_NAME = FindAllCommand::class;
     private $productRepository;
     private $limit;
+    private $logger;
     
     public function __construct($limit, $productRepository)
     {

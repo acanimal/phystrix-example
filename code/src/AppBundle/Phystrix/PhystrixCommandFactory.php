@@ -18,8 +18,12 @@ class PhystrixCommandFactory
         $commandMetricsFactory = new CommandMetricsFactory($stateStorage);
 
         $factory = new CommandFactory(
-            $config, new \Zend\Di\ServiceLocator(), $circuitBreakerFactory, $commandMetricsFactory,
-            new \Odesk\Phystrix\RequestCache(), new \Odesk\Phystrix\RequestLog()
+            $config,
+            new \Zend\Di\ServiceLocator(),
+            $circuitBreakerFactory,
+            $commandMetricsFactory,
+            new \Odesk\Phystrix\RequestCache(),
+            new \Odesk\Phystrix\RequestLog()
         );
         
         return $factory;
