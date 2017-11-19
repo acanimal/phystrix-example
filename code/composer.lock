@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2be7e374222c0d126037b817a1b3b166",
+    "content-hash": "b01539a23ad71729d41b15b4afcbfc11",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1140,6 +1140,42 @@
                 "phystrix"
             ],
             "time": "2017-08-02T04:23:25+00:00"
+        },
+        {
+            "name": "odesk/phystrix-dashboard",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/upwork/phystrix-dashboard.git",
+                "reference": "3a2be9712ec7bab5fdf046622c75238d76c3226d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/upwork/phystrix-dashboard/zipball/3a2be9712ec7bab5fdf046622c75238d76c3226d",
+                "reference": "3a2be9712ec7bab5fdf046622c75238d76c3226d",
+                "shasum": ""
+            },
+            "require": {
+                "odesk/phystrix": "<3.0",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Odesk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Hystrix dashboard support for Phystrix",
+            "keywords": [
+                "dashboard",
+                "odesk",
+                "phystrix"
+            ],
+            "time": "2017-11-19T06:22:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
